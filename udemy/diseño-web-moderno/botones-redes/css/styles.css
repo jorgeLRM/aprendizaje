@@ -1,0 +1,50 @@
+html{
+     box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before{
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+}
+
+:root{
+     --colorYoutube: #CD201F;
+     --colorFacebook: #3B5999;
+     --colorTwitter: #55ACEE;
+     --colorLinkedin: #0077B5;
+     --texto: center;
+}
+
+nav{
+     width: 900px;
+     margin: 20px auto;
+     text-align: var(--texto);
+}
+
+[class^="fab fa"]{
+     font-size: 50px;
+     color: #FFF;
+     width: 140px;
+     text-align: var(--texto);
+     padding: 15px 0;
+     border-radius: 10px;
+}
+
+[class^="fab fa"]:nth-child(1){
+     background-color: var(--colorFacebook);
+}
+
+[class^="fab fa"]:nth-child(2){
+     background-color: var(--colorTwitter);
+}
+
+[class^="fab fa"]:nth-child(3){
+     background-color: var(--colorYoutube);
+}
+
+[class^="fab fa"]:nth-child(4){
+     background-color: var(--colorLinkedin);
+}

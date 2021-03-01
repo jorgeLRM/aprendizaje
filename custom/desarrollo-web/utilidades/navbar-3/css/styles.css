@@ -1,0 +1,54 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    background-color: #f00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px #000;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .logo{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.navbar .logo span{
+    font-weight: bold;
+}
+
+.navbar nav a{
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.navbar nav a:last-child{
+    margin-right: 1rem;
+}
+
+.navbar nav a:hover{
+    background-color: rgb(185, 33, 33);
+}
+
+.navbar nav a:first-child{
+    background-color: rgb(185, 33, 33);
+}

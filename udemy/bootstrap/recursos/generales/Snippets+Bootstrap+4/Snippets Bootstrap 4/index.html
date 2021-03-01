@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="prism.css"  rel="stylesheet" />
+</head>
+<body>
+
+<li>Iniciando el Proyecto</li>
+<pre class="language-markup">
+   <code class="language-markup">
+1.- Clonar el Repo
+2.- Renombrar el repo
+3.- Copiar las imagenes
+4.- Abrir en Visual Studio Code y arrancar servidor
+   </code>
+</pre>
+
+<li>Creando el Header</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;header class="encabezado-sitio container">
+       &lt;div class="row justify-content-md-between">
+       &lt;!--
+      justify-content-md-center, md-around md-start, md-end
+       opcional: align-items-center -start -end -center -baseline -stretch -->
+             &lt;div class="col-lg-4">
+                 &lt;a href="index.php">
+                     &lt;img src="img/logo.svg" class="img-fluid mx-auto d-block pt-4 pb-4">
+                 &lt;/a>
+             &lt;/div> &lt;!--col-lg-4-->
+
+             &lt;div class="col-lg-4">
+                 &lt;nav class="sociales text-center text-lg-right pt-3">
+                     &lt;ul>
+                         &lt;li>
+                            &lt;a href="http://facebook.com">
+                              &lt;span class="sr-only">Facebook&lt;/span>
+                            &lt;/a>
+                         &lt;/li>
+                         &lt;li>
+                            &lt;a href="http://twitter.com">
+                               &lt;span class="sr-only">Twitter&lt;/span>
+                            &lt;/a>
+                         &lt;/li>
+                         &lt;li>
+                            &lt;a href="http://instagram.com">
+                               &lt;span class="sr-only">Instagram&lt;/span>
+                            &lt;/a>
+                         &lt;/li>
+                         &lt;li>
+                            &lt;a href="http://pinterest.com">
+                               &lt;span class="sr-only">Pinterest &lt;/span>
+                            &lt;/a>
+                         &lt;/li>
+                         &lt;li>
+                            &lt;a href="http://youtube.com">
+                               &lt;span class="sr-only">YouTube&lt;/span>
+                            &lt;/a>
+                         &lt;/li>
+                     &lt;/ul>
+                 &lt;/nav>
+             &lt;/div> &lt;!--.col-lg-4-->
+         &lt;/div> &lt;!--.row-->
+   &lt;/header>
+
+   &lt;div class="navegacion mt-3 py-1">
+             &lt;nav class="nav-principal navbar navbar-expand-md navbar-light bg-faded ">
+                   &lt;button class="navbar-toggler" type="button" data-toggle="collapse"
+                   data-target="#nav_principal" aria-expanded="false" aria-label="Toggle Nav">
+                           &lt;span class="navbar-toggler-icon">&lt;/span>
+                   &lt;/button>
+                   &lt;a href="#" class="navbar-brand d-lg-none">Carolina Spa&lt;/a>
+                   &lt;div class="container">
+                           &lt;div class="collapse navbar-collapse" id="nav_principal">
+                                 &lt;ul class="nav nav-justified flex-column flex-sm-row">
+                                     &lt;li class="nav-item">
+                                         &lt;a class="nav-link" href="index.php">Inicio&lt;/a>
+                                     &lt;/li>
+                                     &lt;li class="nav-item">
+                                         &lt;a class="nav-link" href="nosotros.php">Nosotros&lt;/a>
+                                     &lt;/li>
+                                     &lt;li class="nav-item">
+                                         &lt;a class="nav-link" href="servicios.php">Servicios&lt;/a>
+                                     &lt;/li>
+                                     &lt;li class="nav-item">
+                                         &lt;a class="nav-link" href="productos.php">Productos&lt;/a>
+                                     &lt;/li>
+                                     &lt;li class="nav-item">
+                                         &lt;a class="nav-link" href="contacto.php">Contacto&lt;/a>
+                                     &lt;/li>
+                                 &lt;/ul>
+                           &lt;/div>
+                   &lt;/div>
+               &lt;/nav>
+   &lt;/div><!--.navegacion-->
+   </code>
+</pre>
+
+<li>Estilos al Menú de Redes Sociales</li>
+<pre class="language-css">
+   <code class="language-css">
+// Descargar font awesome y enlazar.
+&lt;link rel="stylesheet" href="css/font-awesome.min.css">
+
+/** Sociales **/
+.sociales ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.sociales ul li {
+    position: relative;
+    display: inline-block;
+}
+.sociales ul li a::before {
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.4rem;
+    content: '\f08e';
+    -webkit-font-smoothing: antialiased;
+    font-size: 2rem;
+    color: #e082a8;
+}
+.sociales ul li a[href*="facebook.com"]::before{
+    content: '\f230';
+}
+.sociales ul li a[href*="twitter.com"]::before{
+    content: '\f081';
+}
+.sociales ul li a[href*="instagram.com"]::before{
+    content: '\f16d';
+}
+.sociales ul li a[href*="pinterest.com"]::before{
+    content: '\f0d2';
+}
+.sociales ul li a[href*="youtube.com"]::before{
+    content: '\f16a';
+}
+   </code>
+</pre>
+
+
+<li>Estilos a la barra de navegación</li>
+<pre class="language-css">
+   <code class="language-css">
+
+/** Navegacion*/
+.navegacion {
+  background-color: #8ed3cc;
+}
+.navbar-toggler {
+    background-color: white;
+}
+@media (min-width:576px) {
+    .flex-sm-row {
+        width: 100%;
+    }
+}
+.bg-faded {
+    background-color: transparent;
+}
+
+nav.nav-principal {
+  background-image: url(../img/border_horizontal.png),
+                    url(../img/border_horizontal.png);
+  background-repeat: repeat-x;
+  background-position: 0px top, 0px bottom;
+
+}
+nav.nav-principal .nav-item {
+  transition: background-color .5s ease-in-out;
+}
+nav.nav-principal .nav-item:hover {
+  background-color: #39a69b;
+}
+nav.nav-principal .nav-item .nav-link {
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-family:'Raleway', sans-serif;
+}
+
+   </code>
+</pre>
+
+<li>Agregar Slider</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;div class="container">
+     &lt;div id="slider-principal" class="carousel slide mt-4" data-ride="carousel">
+           &lt;ol class="carousel-indicators">
+               &lt;li data-target="#slider-principal" data-slide-to="0" class="active">&lt;/li>
+               &lt;li data-target="#slider-principal" data-slide-to="1">&lt;/li>
+               &lt;li data-target="#slider-principal" data-slide-to="2">&lt;/li>
+           &lt;/ol>
+
+
+
+           &lt;div class="carousel-inner" role="listbox">
+                 &lt;div class="carousel-item active">
+                       &lt;img src="img/slide_01.jpg" class="d-block img-fluid">
+                       &lt;div class="carousel-caption d-none d-md-block">
+                           &lt;h3 class="text-uppercase">Nuevas Instalaciones&lt;/h3>
+                       &lt;/div>
+                 &lt;/div>&lt;!--.carousel-item-->
+                 &lt;div class="carousel-item">
+                       &lt;img src="img/slide_02.jpg" class="d-block img-fluid">
+                       &lt;div class="carousel-caption d-none d-md-block">
+                           &lt;h3 class="text-uppercase">Conoce nuestros servicios&lt;/h3>
+                       &lt;/div>
+                 &lt;/div>&lt;!--.carousel-item-->
+                 &lt;div class="carousel-item">
+                       &lt;img src="img/slide_03.jpg" class="d-block img-fluid">
+                       &lt;div class="carousel-caption d-none d-md-block">
+                           &lt;h3 class="text-uppercase">Nuevo sitio web, 2x1 en todos los servicios&lt;/h3>
+                       &lt;/div>
+                 &lt;/div> &lt;!--.carousel-item-->
+           &lt;/div> &lt;!--.carousel-inner-->
+
+           &lt;a href="#slider-principal" class="carousel-control-prev" data-slide="prev">
+               &lt;span class="carousel-control-prev-icon" aria-hidden="true">&lt;/span>
+               &lt;span class="sr-only">Anterior&lt;/span>
+           &lt;/a>
+
+           &lt;a href="#slider-principal" class="carousel-control-next" data-slide="next">
+               &lt;span class="carousel-control-next-icon" aria-hidden="true">&lt;/span>
+               &lt;span class="sr-only">Siguiente&lt;/span>
+           &lt;/a>
+
+     &lt;/div>&lt;!--#slider-principal-->
+ &lt;/div><!--.container-->
+   </code>
+</pre>
+
+<li>Estilos al slider</li>
+<pre class="language-css">
+   <code class="language-css">
+      // agregar 3 fuentes.
+      &lt;link href="https://fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Raleway:400,700,900" rel="stylesheet">
+
+
+/** Carousel **/
+.carousel .carousel-caption h3 {
+  font-family:'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+   </code>
+</pre>
+
+
+<li>Seccion bienvenidos al sitio web</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;section class="nuevo-sitio py-5">
+    &lt;h2 class="text-center text-uppercase mt-4">&lt;span class="text-lowercase d-block">bienvenido a nuestro&lt;/span> sitio web&lt;/h2>
+    &lt;p class="text-center mt-4">Te sentirás como nuevo(a) con nuestros &lt;br> masajistas profesionales.&lt;/p>
+&lt;/section>
+   </code>
+</pre>
+
+
+<li>Trabajando con los encabezados</li>
+<pre class="language-css">
+   <code class="language-css">
+body {
+  background-color: #f8f8f8;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h2 span {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h3 span {
+  font-size: 3.6rem;
+}
+h2, h3 {
+  font-family: 'Lato', sans-serif;
+  color: #000000;
+  line-height: 2.4rem;
+}
+h2 span,
+h3 span {
+  font-family: 'Italianno', cursive;
+  color: #e082a8;
+}
+   </code>
+</pre>
+
+
+<li>Sección de Servicios</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;div class="container pb-5">
+     &lt;div class="row justify-content-center">
+         &lt;div class="col-12 col-md-4 text-center mb-4 mb-md-0 ">
+             &lt;div class="imagen-servicio">
+                 &lt;img src="img/servicio_01.jpg" class="img-fluid">
+                 &lt;div class="row no-gutters justify-content-center">
+                     &lt;div class="col-8  col-md-10 servicio-info pt-4">
+                         &lt;h3 class="text-center text-uppercase">
+                             &lt;span class="text-lowercase d-block">conoce sobre&lt;/span> nosotros
+                         &lt;/h3>
+                         &lt;a href="#" class="btn btn-primary btn-block text-uppercase mt-4 py-3">leer más&lt;/a>
+                     &lt;/div>
+                 &lt;/div>
+             &lt;/div>
+         &lt;/div> &lt;!--.col-12-->
+
+         &lt;div class="col-12 col-md-4 text-center ">
+             &lt;div class="imagen-servicio">
+                 &lt;img src="img/servicio_02.jpg" class="img-fluid">
+                 &lt;div class="row no-gutters justify-content-center">
+                     &lt;div class="col-8  col-md-10 servicio-info pt-4">
+                         &lt;h3 class="text-center text-uppercase">
+                             &lt;span class="text-lowercase d-block">nuestros&lt;/span> servicios
+                         &lt;/h3>
+                         &lt;a href="#" class="btn btn-primary btn-block text-uppercase mt-4 py-3">leer más&lt;/a>
+                     &lt;/div>
+                 &lt;/div>
+             &lt;/div>
+         &lt;/div> &lt;!--.col-12-->
+
+         &lt;div class="col-12 col-md-4 text-center ">
+             &lt;div class="imagen-servicio">
+                 &lt;img src="img/servicio_03.jpg" class="img-fluid">
+                 &lt;div class="row no-gutters justify-content-center">
+                     &lt;div class="col-8  col-md-10 servicio-info pt-4">
+                         &lt;h3 class="text-center text-uppercase">
+                             &lt;span class="text-lowercase d-block">visita nuestra&lt;/span> tienda
+                         &lt;/h3>
+                         &lt;a href="#" class="btn btn-primary btn-block text-uppercase mt-4 py-3">leer más&lt;/a>
+                     &lt;/div>
+                 &lt;/div>
+             &lt;/div>
+         &lt;/div> &lt;!--.col-12-->
+     &lt;/div>
+ &lt;/div><!--.container-->
+   </code>
+</pre>
+
+<li>Estilos a las imagenes de servicios</li>
+<pre class="language-css">
+   <code class="language-css">
+/** Servicios**/
+.imagen-servicio img{
+  border: 6px solid white;
+  -webkit-transition: transform .3s ease;
+  -ms-transition: transform .3s ease;
+  transition: transform .3s ease;
+}
+.imagen-servicio img:hover {
+  -webkit-transform: scale(1.2) rotate(10deg);
+  -ms-transform: scale(1.2) rotate(10deg);
+  transform: scale(1.2) rotate(10deg);
+}
+.servicio-info {
+  background-color: #ffffff;
+  margin-top: -5rem;
+}
+.servicio-info .btn-primary {
+  background-color: #e082a8;
+  border:none;
+  border-radius: 0;
+}
+   </code>
+</pre>
+
+<li>Horarios</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;div class="horario">
+   &lt;div class="container">
+      &lt;div class="row">
+          &lt;div class="col-md-6 col-12 p-4">
+                &lt;h2 class="text-center text-uppercase mt-4">Horarios&lt;/h2>
+                &lt;p class="text-center mt-5 lead">Morbi risus mi, feugiat non nulla eu, dapibus sagittis turpis. Praesent vel dignissim libero. Morbi vel porttitor orci. Integer non elit eu odio vulputate aliquet at sed odio.&lt;/p>
+
+               &lt;table class="table table-hover text-center mt-5">
+                    &lt;thead>
+                        &lt;tr>
+                            &lt;th class="text-center">Día&lt;/th>
+                            &lt;th class="text-center">De&lt;/th>
+                            &lt;th class="text-center">Hasta&lt;/th>
+                        &lt;/tr>
+                    &lt;/thead>
+                    &lt;tbody>
+                        &lt;tr>
+                           &lt;td>Lunes&lt;/td>
+                            &lt;td>09:00&lt;/td>
+                            &lt;td>19:00&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Martes&lt;/td>
+                            &lt;td>09:00&lt;/td>
+                            &lt;td>19:00&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Miércoles&lt;/td>
+                            &lt;td>09:00&lt;/td>
+                            &lt;td>19:00&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Jueves&lt;/td>
+                            &lt;td>09:00&lt;/td>
+                            &lt;td>19:00&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Viernes&lt;/td>
+                            &lt;td>09:00&lt;/td>
+                            &lt;td>19:00&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Sábado&lt;/td>
+                            &lt;td>10:00&lt;/td>
+                            &lt;td>14:00&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Domingo&lt;/td>
+                            &lt;td>Cerrado&lt;/td>
+                            &lt;td>Cerrado&lt;/td>
+                        &lt;/tr>
+                    &lt;/tbody>
+               &lt;/table>
+         &lt;/div>
+         &lt;div class="col-md-6 col-12 bg-horario ">&lt;/div>
+      &lt;/div> &lt;!--.row-->
+   &lt;/div>&lt;!--.container-->
+ &lt;/div>
+   </code>
+</pre>
+
+<li>Estilos a los horarios</li>
+<pre class="language-css">
+   <code class="language-css">
+
+/** Horarios **/
+.horario {
+  background-color: #8ed3cc;
+  color: #ffffff;
+}
+.horario h2 {
+  color: #ffffff;
+  font-size: 2rem;
+}
+.horario .table {
+    border: 2px solid #e082a8;
+}
+.horario .table thead {
+  background-color: #e082a8;
+}
+.horario .table td,
+.horario .table thead th {
+  border: none;
+}
+.horario .table tbody tr td {
+  padding:.35rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+}
+
+.bg-horario{
+  background-image:url(../img/bg_horarios.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 300px;
+}
+
+   </code>
+</pre>
+
+<li>Sección de Productos</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;section class="productos container py-5">
+     &lt;h2 class="text-center text-uppercase mt-4">
+        &lt;span class="text-lowercase d-block">nuestros&lt;/span> productos
+     &lt;/h2>
+     &lt;div class="row py-5">
+          &lt;div class="col-md-3">
+                &lt;div class="card">
+                    &lt;a href="producto.php?producto=1">
+                            &lt;img class="card-img-top" src="img/producto_mini_01.jpg">
+                            &lt;div class="card-body">
+                                    &lt;h3 class="card-title text-center text-uppercase">
+                                        Kit Hogar                                                &lt;/h3>
+                                    &lt;p class="card-text text-uppercase">
+                                        Descripción corta del Kit de Hogar                                                &lt;/p>
+                                    &lt;p class="precio lead text-center mb-0">
+                                        $ 25.00                                                &lt;/p>
+                            &lt;/div>
+                    &lt;/a>
+                 &lt;/div>
+         &lt;/div>  &lt;!--col-md-3-->
+         &lt;div class="col-md-3">
+             &lt;div class="card">
+                 &lt;a href="producto.php?producto=2">
+                      &lt;img class="card-img-top" src="img/producto_mini_02.jpg">
+                      &lt;div class="card-body">
+                              &lt;h3 class="card-title text-center text-uppercase">
+                                  Aromaterapia y Esencias                                                &lt;/h3>
+                              &lt;p class="card-text text-uppercase">
+                                  Aromaterapia y Esencias pequeña descripción                                                &lt;/p>
+                              &lt;p class="precio lead text-center mb-0">
+                                  $ 30.00                                                &lt;/p>
+                      &lt;/div>
+                  &lt;/a>
+              &lt;/div>  &lt;!--.card-->
+         &lt;/div> &lt;!--col-md-3-->
+         &lt;div class="col-md-3">
+             &lt;div class="card">
+                 &lt;a href="producto.php?producto=3">
+                         &lt;img class="card-img-top" src="img/producto_mini_03.jpg">
+                         &lt;div class="card-body">
+                                 &lt;h3 class="card-title text-center text-uppercase">
+                                     Jabón para Spa de 2 piezas                                                &lt;/h3>
+                                 &lt;p class="card-text text-uppercase">
+                                     Jabón para Spa de 2 piezas con descripción corta                                                &lt;/p>
+                                 &lt;p class="precio lead text-center mb-0">
+                                     $ 15.00                                                &lt;/p>
+                         &lt;/div>
+                 &lt;/a>
+              &lt;/div>     &lt;!--.card-->
+          &lt;/div> &lt;!--.col-md-3-->
+         &lt;div class="col-md-3">
+                &lt;div class="card">
+                    &lt;a href="producto.php?producto=4">
+                            &lt;img class="card-img-top" src="img/producto_mini_04.jpg">
+                            &lt;div class="card-body">
+                                    &lt;h3 class="card-title text-center text-uppercase">
+                                        Kit para el Hogar 2                                                &lt;/h3>
+                                    &lt;p class="card-text text-uppercase">
+                                        Kit para el Hogar 2 descripción corta                                                &lt;/p>
+                                    &lt;p class="precio lead text-center mb-0">
+                                        $ 20.00                                                &lt;/p>
+                            &lt;/div>
+                    &lt;/a>
+                 &lt;/div>     &lt;!--.card-->
+            &lt;/div> &lt;!--.col-md-3-->
+      &lt;/div>&lt;!--.row-->
+ &lt;/section>
+   </code>
+</pre>
+
+<li>Estilos a los Productos</li>
+<pre class="language-css">
+   <code class="language-css">
+/* Productos*/
+.productos .card{
+  border: none;
+}
+.productos .card a {
+  color: #000000;
+}
+.productos .card a:hover {
+  text-decoration: none;
+}
+.productos .card h3 {
+  color: #e082a8;
+  font-size: 1rem;
+}
+.productos .card p {
+  font-size: .8rem;
+}
+.productos .card p.precio {
+  font-size: 1.6rem;
+  color: #979797;
+}
+   </code>
+</pre>
+
+
+<li>Realiza una Cita</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;div class="citas container-fluid py-5">
+    &lt;div class="row justify-content-center">
+        &lt;div class="col-md-8 col-lg-6 py-3 text-center">
+            &lt;h3 class="text-uppercase">Realiza una cita&lt;/h3>
+            &lt;p class="mt-5">Maecenas rhoncus, augue sed volutpat suscipit, augue felis laoreet lectus, vel convallis diam est eu lectus. Mauris metus orci, tempus nec bibendum eget, pulvinar at metus. Etiam egestas sodales auctor.&lt;/p>
+            &lt;a href="#" class="text-uppercase btn btn-primary mt-3 btn-lg">leer más&lt;/a>
+        &lt;/div> &lt;!--.col-12-->
+    &lt;/div>&lt;!--.row-->
+&lt;/div>&lt;!--.citas-->
+   </code>
+</pre>
+
+<li>Estilos a las citas</li>
+<pre class="language-css">
+   <code class="language-css">
+/** Citas **/
+.citas {
+    background-image: url(../img/bg_citas.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+@media (min-width:992px) {
+    .citas {
+        background-size: cover;
+    }
+}
+.citas h3 {
+    color: #fff;
+    font-size: 3.5rem;
+    line-height: 4rem;
+}
+.citas p {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 2.4rem;
+}
+.citas .btn-primary {
+    background-color: #8ed3cc;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 5rem;
+    font-family: 'Lato', sans-serif;
+}
+.citas .btn-primary:hover {
+    background-color: #68beb5;
+}
+   </code>
+</pre>
+
+
+<li>Footer</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;footer class="footer-sitio pt-3 mt-5">
+    &lt;div class="container">
+            &lt;div class="row">
+                    &lt;div class="col-md-4">
+                        &lt;h3 class="text-uppercase text-center pb-4">Nosotros&lt;/h3>
+                        &lt;p class="text-justify">Praesent pulvinar dolor eu metus mollis egestas. Vestibulum efficitur, magna quis laoreet rutrum, eros ipsum rutrum erat, a facilisis neque dui ullamcorper metus.&lt;/p>
+                    &lt;/div>
+                    &lt;div class="col-md-4 text-center">
+                        &lt;h3 class="text-uppercase pb-4">Horario&lt;/h3>
+                        &lt;p>Lun-Vie: 9 AM - 7 PM&lt;/p>
+                        &lt;p>Sábado: 10 AM - 2 PM&lt;/p>
+                        &lt;p>Domingo: Cerrado&lt;/p>
+                    &lt;/div>
+                    &lt;div class="col-md-4 text-center">
+                        &lt;h3 class="text-uppercase pb-4">Contacto&lt;/h3>
+                        &lt;p>66 East Sunnyslope Avenue &lt;/p>
+                        &lt;p>Lansdowne, PA 19050&lt;/p>
+
+                        &lt;nav class="sociales row justify-content-center pt-3">
+                            &lt;ul>
+                                &lt;li>&lt;a href="http://facebook.com">&lt;span class="sr-only">Facebook&lt;/span>&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="http://twitter.com">&lt;span class="sr-only">Twitter&lt;/span>&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="http://instagram.com">&lt;span class="sr-only">Instagram&lt;/span>&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="http://pinterest.com">&lt;span class="sr-only">Pinterest&lt;/span>&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="http://youtube.com">&lt;span class="sr-only">YouTube&lt;/span>&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                    &lt;/div>
+                    &lt;hr class="w-100">
+                    &lt;p class="text-center copyright w-100">Carolina Spa & Salon 2017&lt;/p>
+            &lt;/div>
+    &lt;/div>
+&lt;/footer>
+   </code>
+</pre>
+
+
+<li>Creando un Template para duplicar</li>
+<pre class="language-markup">
+   <code class="language-markup">
+1.- Copiar Header y footer
+2.- añadir el siguiente código:
+
+&lt;div class="container pt-4">
+    &lt;div class="row">
+        &lt;main class="col-lg-8 contenido-principal">
+            &lt;h2 class="d-block d-md-none text-uppercase text-center">Titulo Aquí&lt;/h2>
+
+         &lt;/main>
+
+      &lt;aside class="col-lg-4 pt-4 pt-lg-0">
+          &lt;div class="sidebar horario p-3">
+          &lt;h2 class="text-center text-uppercase mt-4">Horarios&lt;/h2>
+          &lt;p class="text-center mt-5 lead">Morbi risus mi, feugiat non nulla eu, dapibus sagittis turpis. Praesent vel dignissim libero. Morbi vel porttitor orci. Integer non elit eu odio vulputate aliquet at sed odio.&lt;/p>
+      &lt;/aside>
+      &lt;/div>
+&lt;/div>
+
+
+
+   </code>
+</pre>
+
+<li>Creando un HERO</li>
+<pre class="language-markup">
+   <code class="language-markup">
+// Agregar un hero arriba del container anterior
+
+&lt;div class="container pt-4">
+    &lt;div class="row no-gutters">
+        &lt;div class="col-12 hero">
+            &lt;img src="img/ruta_imagen.jpg" class="img-fluid">
+            &lt;h2 class="text-uppercase d-none d-md-block">Titulo aqui&lt;/h2>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+   </code>
+</pre>
+
+<li>Estilos al Hero</li>
+<pre class="language-css">
+   <code class="language-css">
+
+/** Internas**/
+/** Nosotros **/
+.hero {
+    position: relative;
+}
+.hero h2 {
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+    padding: 1rem 2rem 1rem 6rem;
+    background-color: #8ed3cc;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #fff;
+}
+.contenido-principal {
+    line-height: 2rem;
+}
+   </code>
+</pre>
+
+<li>Creando la página de nosotros.</li>
+<pre class="language-markup">
+   <code class="language-markup">
+// enlazar a nosotros.jpg
+// Agregar el Lorem Ipsum
+
+// Crear una galeria
+&lt;div class="galeria">
+   &lt;h2 class="text-center text-uppercase mt-4">&lt;span class="text-lowercase d-block">conoce nuestras&lt;/span> instalaciones&lt;/h2>
+
+   &lt;div class="imagenes pt-4">
+
+
+           &lt;a href="#" data-target="#imagen_1" data-toggle="modal">
+               &lt;img src="img/galeria_mini_01.jpg">
+           &lt;/a>
+
+           &lt;a href="#" data-target="#imagen_2" data-toggle="modal">
+               &lt;img src="img/galeria_mini_02.jpg">
+           &lt;/a>
+
+           &lt;a href="#" data-target="#imagen_3" data-toggle="modal">
+               &lt;img src="img/galeria_mini_03.jpg">
+           &lt;/a>
+
+           &lt;!-- Imagenes Modal-->
+
+               &lt;div class="modal fade" id="imagen_1" tabindex="-1" role="dialog" aria-labelledby="imagen_1" aria-hidden="true">
+                  &lt;div class="modal-dialog modal-lg" role="document">
+                       &lt;div class="modal-content">
+                           &lt;div class="modal-body">
+                               &lt;img src="img/galeria_grande_01.jpg" class="img-fluid">
+                           &lt;/div> &lt;!--.modal-body -->
+                       &lt;/div>&lt;!--.modal-content-->
+                  &lt;/div>&lt;!--.modal-dialog-->
+               &lt;/div>&lt;!--.modal-->
+
+               &lt;div class="modal fade" id="imagen_2" tabindex="-1" role="dialog" aria-labelledby="imagen_2" aria-hidden="true">
+                  &lt;div class="modal-dialog modal-lg" role="document">
+                       &lt;div class="modal-content">
+                           &lt;div class="modal-body">
+                               &lt;img src="img/galeria_grande_02.jpg" class="img-fluid">
+                           &lt;/div> &lt;!--.modal-body -->
+                       &lt;/div>&lt;!--.modal-content-->
+                  &lt;/div>&lt;!--.modal-dialog-->
+               &lt;/div>&lt;!--.modal-->
+
+               &lt;div class="modal fade" id="imagen_3" tabindex="-1" role="dialog" aria-labelledby="imagen_3" aria-hidden="true">
+                  &lt;div class="modal-dialog modal-lg" role="document">
+                       &lt;div class="modal-content">
+                           &lt;div class="modal-body">
+                               &lt;img src="img/galeria_grande_03.jpg" class="img-fluid">
+                           &lt;/div> &lt;!--.modal-body -->
+                       &lt;/div>&lt;!--.modal-content-->
+                  &lt;/div>&lt;!--.modal-dialog-->
+               &lt;/div>&lt;!--.modal-->
+   &lt;/div>&lt;!--.imagenes-->
+&lt;/div>&lt;!--.galeria-->
+
+   </code>
+</pre>
+
+
+<li>Creando la barra lateral</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;aside class="col-lg-4 pt-4 pt-lg-0">
+    &lt;div class="sidebar horario p-3">
+       &lt;h2 class="text-center text-uppercase mt-4">Horarios&lt;/h2>
+       &lt;p class="text-center mt-5 lead">Morbi risus mi, feugiat non nulla eu, dapibus sagittis turpis. Praesent vel dignissim libero. Morbi vel porttitor orci. Integer non elit eu odio vulputate aliquet at sed odio.&lt;/p>
+
+       &lt;table class="table table-hover text-center mt-5">
+            &lt;thead>
+                &lt;tr>
+                    &lt;th class="text-center">Día&lt;/th>
+                    &lt;th class="text-center">De&lt;/th>
+                    &lt;th class="text-center">Hasta&lt;/th>
+                &lt;/tr>
+            &lt;/thead>
+            &lt;tbody>
+                &lt;tr>
+                   &lt;td>Lunes&lt;/td>
+                    &lt;td>09:00&lt;/td>
+                    &lt;td>19:00&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;td>Martes&lt;/td>
+                    &lt;td>09:00&lt;/td>
+                    &lt;td>19:00&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;td>Miércoles&lt;/td>
+                    &lt;td>09:00&lt;/td>
+                    &lt;td>19:00&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;td>Jueves&lt;/td>
+                    &lt;td>09:00&lt;/td>
+                    &lt;td>19:00&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;td>Viernes&lt;/td>
+                    &lt;td>09:00&lt;/td>
+                    &lt;td>19:00&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;td>Sábado&lt;/td>
+                    &lt;td>10:00&lt;/td>
+                    &lt;td>14:00&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;td>Domingo&lt;/td>
+                    &lt;td>Cerrado&lt;/td>
+                    &lt;td>Cerrado&lt;/td>
+                &lt;/tr>
+            &lt;/tbody>
+       &lt;/table>
+    &lt;/div>
+&lt;/aside>
+   </code>
+</pre>
+
+<li>Estilos al Aside</li>
+<pre class="language-css">
+   <code class="language-css">
+aside {
+    background-color: #8ed3cc;
+    color: #fff;
+}
+   </code>
+</pre>
+
+<li>Página de Servicios</li>
+<pre class="language-markup">
+   <code class="language-markup">
+1.- Duplicar de Template
+2.- Enlazar el servicios.jpg
+3.- Cambiar el titulo
+4.- dentro del main:
+
+&lt;div id="servicios">
+  &lt;div class="card">
+       &lt;div class="card-header" id="servicio1">
+            &lt;h2 class="mb-0">
+              &lt;button class="btn btn-link"
+                      data-toggle="collapse"
+                      data-target="#descripcion1"
+                      aria-expanded="true"
+                      aria-controls="descripcion1">
+                Servicio 1
+              &lt;/button>
+           &lt;/h2>
+       &lt;/div> &lt;!--card-header-->
+
+       &lt;div id="descripcion1"
+            class="collapse show"
+            aria-labelledby="servicio1"
+            data-parent="#servicios">
+
+            &lt;div class="card-body">
+                 texto aqui
+            &lt;/div>
+       &lt;/div> &lt;!--#Description-->
+  &lt;/div> &lt;!--.card-->
+
+  &lt;div class="card">
+       &lt;div class="card-header" id="servicio2">
+            &lt;h2 class="mb-0">
+                 &lt;button class="btn btn-link collapsed"
+                         data-toggle="collapse"
+                         data-target="#descripcion2"
+                         aria-expanded="false"
+                         aria-controls="descripcion2">
+                   Servicio 2
+                 &lt;/button>
+           &lt;/h2>
+       &lt;/div> &lt;!--.card-header-->
+       &lt;div id="descripcion2"
+            class="collapse"
+            aria-labelledby="servicio2"
+            data-parent="#servicios">
+
+            &lt;div class="card-body">
+                 texto aqui
+            &lt;/div>
+       &lt;/div> &lt;!--#descripcion-->
+  &lt;/div>&lt;!--.card-->
+
+  &lt;div class="card">
+       &lt;div class="card-header" id="servicio3">
+            &lt;h2 class="mb-0">
+                 &lt;button class="btn btn-link collapsed"
+                         data-toggle="collapse"
+                         data-target="#descripcion3"
+                         aria-expanded="false"
+                         aria-controls="descripcion3">
+                   Servicio 3
+                 &lt;/button>
+            &lt;/h2>
+       &lt;/div>
+       &lt;div id="descripcion3"
+            class="collapse"
+            aria-labelledby="servicio3"
+            data-parent="#accordion">
+            &lt;div class="card-body">
+                texto aqui
+            &lt;/div>
+       &lt;/div>
+  &lt;/div> &lt;!--.card-->
+&lt;/div> &lt;!--#servicios-->
+
+   </code>
+</pre>
+
+<li>Estilos al collapse</li>
+<pre class="language-css">
+   <code class="language-css">
+
+/** Servicios **/
+#servicios .card-header {
+    background-color: #e082a8;
+}
+#servicios .card-header h3 a {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+}
+#servicios .card-block {
+    font-size: 1.2rem;
+    line-height:2.4rem;
+}
+   </code>
+</pre>
+
+<li>Aside de Productos</li>
+<pre class="language-css">
+   <code class="language-css">
+&lt;aside class="col-lg-4 pt-4 pt-lg-0 descuento">
+    &lt;div class="p-3">
+       &lt;h3 class="text-center text-uppercase mt-4">Nuevos Clientes&lt;/h3>
+       &lt;p class="lead text-center mt-4">Recibe 20% de descuento con este cupón:&lt;/p>
+
+       &lt;div class="cupon p-1 mt-5">
+            &lt;p class="text-uppercase text-center">
+                &lt;span class="display-5 pt-3">20% Descuento&lt;/span>
+                en todos los servicios
+            &lt;/p>
+       &lt;/div>
+    &lt;/div>
+&lt;/aside>
+   </code>
+</pre>
+
+
+<li>Estilos al Aside</li>
+<pre class="language-css">
+   <code class="language-css">
+
+aside .cupon {
+    border:3px dashed white;
+}
+aside .cupon p {
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+}
+aside .cupon p span {
+    display: block;
+    font-size: 2rem;
+}
+
+   </code>
+</pre>
+
+<li>Finalizando el servicios.html</li>
+<pre class="language-markup">
+   <code class="language-markup">
+1.- Copiar y pegar el código de citas
+   </code>
+</pre>
+
+
+
+<li>Trabajando con los productos</li>
+<pre class="language-markup">
+   <code class="language-markup">
+1.- Crear productos.html
+2.- Cambiar la imagen
+3.- Cambiar el nombre
+
+agregar:
+&lt;div class="container productos pt-5">
+    &lt;div class="row">
+         &lt;div class="card-columns">
+            &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_01.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Kit Hogar&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Descripción corta del Kit de Hogar&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 25.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+              &lt;/div>
+               &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_02.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Aromaterapia y Esencias&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Aromaterapia y Esencias pequeña descripción&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 30.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+              &lt;/div>
+               &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_03.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Jabón para Spa de 2 piezas&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Jabón para Spa de 2 piezas con descripción corta&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 15.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+              &lt;/div>
+               &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_04.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Kit para el Hogar 2&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Kit para el Hogar 2 descripción corta&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 20.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+              &lt;/div>
+            &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_05.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Velas Aromaticas&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Aromatic Candles Short Description&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 35.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+              &lt;/div>
+              &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_06.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Agua de Rosas&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Agua de Rosas descripción corta&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 3.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+              &lt;/div>
+            &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_07.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Piedras Calientes&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Descripcion corta de las piedras calientes&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 10.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+              &lt;/div>
+            &lt;div class="card">
+                  &lt;a href="#">
+                        &lt;img src="img/producto_mini_08.jpg" class="card-img-top img-fluid">
+                        &lt;div class="card-body">
+                            &lt;h3 class="card-title text-center text-uppercase">Toallas&lt;/h3>
+                            &lt;p class="card-text text-uppercase">Toallas descripción corta&lt;/p>
+                            &lt;p class="precio lead text-center mb-0">$ 12.00&lt;/p>
+                        &lt;/div>
+                  &lt;/a>
+             &lt;/div>
+      &lt;/div>&lt;!--.card-columns-->
+   &lt;/div>&lt;!--.row-->
+&lt;/div> &lt;!--.container-->
+   </code>
+</pre>
+
+<li>Cambiando el número de columnas</li>
+<pre class="language-css">
+   <code class="language-css">
+/** Productos **/
+.card-columns {
+    -webkit-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: .75rem;
+    column-gap: .75rem;
+}
+@media (min-width:576px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+@media (min-width:768px) {
+    .card-columns {
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+   </code>
+</pre>
+
+<li>Creando Template para un solo producto</li>
+<pre class="language-markup">
+   <code class="language-markup">
+1.- Crear producto.html
+2.- Cambiar la imagen
+3.- Cambiar el nombre
+
+agregar:
+&lt;main class="col-lg-8 contenido-principal">
+      &lt;h2 class="d-block d-md-none text-uppercase text-center">Kit Hogar&lt;/h2>
+      &lt;p>Nulla in orci at est porta egestas id accumsan nisl. Sed cursus ante elit, non dapibus lectus ullamcorper ac. Donec finibus est vitae semper ultrices. Maecenas ante leo, ornare eget feugiat et, dignissim eget erat. Quisque semper felis in ante ornare, in tristique diam scelerisque. Nullam imperdiet luctus porttitor. Curabitur dictum lorem lorem, at facilisis sapien fermentum vel. In commodo arcu felis, id luctus ex bibendum at. Etiam tempus vehicula est eget pellentesque. Morbi quis lorem varius, tincidunt arcu ut, lacinia dolor. Suspendisse ac lacinia metus, et pellentesque justo. Ut nec arcu eu nulla finibus dapibus.\r\n\r\nQuisque arcu odio, consequat a leo eu, lobortis feugiat purus. Phasellus lectus nulla, convallis sit amet sollicitudin ac, placerat vulputate augue. Morbi lorem lectus, tincidunt et quam quis, rhoncus vulputate purus. Etiam ultrices ut justo ut blandit. Suspendisse at nisi eget quam porta tempor sed eu nibh. Suspendisse vehicula bibendum blandit. Curabitur laoreet malesuada commodo. &lt;/p>
+&lt;/main>
+&lt;aside class="col-lg-4 pt-4 pt-lg-0 descripcion_producto">
+   &lt;h3 class="text-uppercase text-center mt-5">Descripción&lt;/h3>
+   &lt;p class="text-center lead p-3">Descripción corta del Kit de Hogar&lt;/p>
+
+   &lt;h3 class="text-uppercase text-center mt-2">Precio&lt;/h3>
+   &lt;p class="display-4 text-center p-3">$ 25.00&lt;/p>
+&lt;/aside>
+   </code>
+</pre>
+
+<li>Formulario de Contacto</li>
+<pre class="language-markup">
+   <code class="language-markup">
+&lt;div class="row justify-content-center">
+    &lt;main class="col-12 col-md-10  col-lg-8 contenido-principal">
+        &lt;h2 class="d-block d-md-none text-uppercase text-center">Contacto&lt;/h2>
+
+         &lt;form class="p-5 mt-5 formulario-contacto">
+             &lt;div class="form-group">
+                 &lt;label for="nombre">Nombre&lt;/label>
+                 &lt;input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+             &lt;/div>
+             &lt;div class="form-group">
+                 &lt;label for="email">Email&lt;/label>
+                 &lt;input type="email" class="form-control" id="email" name="email" placeholder="Tu Email">
+             &lt;/div>
+             &lt;div class="form-group">
+                 &lt;label for="mensaje">Mensaje&lt;/label>
+                 &lt;textarea class="form-control" id="mensaje" name="mensaje" rows="6">&lt;/textarea>
+             &lt;/div>
+             &lt;input type="submit" class="btn btn-primary text-uppercase" name="enviar" value="Enviar">
+         &lt;/form>
+   &lt;/main>
+&lt;/div>
+   </code>
+</pre>
+
+<li>Validación al formulario</li>
+<pre class="language-markup">
+   <code class="language-markup">
+// despues de cada input
+&lt;div class="invalid-feedback">
+   El mensaje es obligatorio
+&lt;/div>
+// agregar al form: class="needs-validation" novalidate>
+// agregar required a los campos
+
+   </code>
+</pre>
+
+<li>Script validación</li>
+<pre class="language-js">
+   <code class="language-js">
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Seleccionar el formulario para validar
+      var forms = document.getElementsByClassName('needs-validation');
+      // Validar cada campo y prevenir que se envie
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+   </code>
+</pre>
+
+<li>Estilos al Contacto</li>
+<pre class="language-css">
+   <code class="language-css">
+/** Contacto **/
+.formulario-contacto {
+    border: 2px solid #9a9a9a;
+    background-color: #ffffff;
+}
+.formulario-contacto .btn-primary {
+    background-color: #8cd3cc;
+    border:none;
+    border-radius: 0;
+    padding: 1rem 6rem;
+}
+.formulario-contacto .btn-primary:hover {
+    background-color: #6bbdb5;
+    cursor: pointer;
+}
+   </code>
+</pre>
+        <style>
+        body {
+           max-width: 1100px;
+           margin: 0 auto;
+        }
+        * {
+           margin:0;
+           padding:0;
+        }
+        li {
+           text-align: center;
+           list-style:none;
+           font-family: helvetica, arial, serif;
+           margin:30px 0;
+           font-weight: bold;
+           text-transform: uppercase;
+        }
+        :not(pre) > code[class*="language-"], pre[class*="language-"] {
+            background-color: black;
+        }
+        code[class*="language-"], pre[class*="language-"] {
+            font-size: 20px;
+        }
+
+        li {
+           font-size: 30px;
+        }
+        </style>
+    <script src="prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/*
+     ESTILOS DE PRUEBA
+*/
+.container {
+  border: 1px solid red;
+}
+
+.row {
+  border: 1px solid blue;
+}
+
+.row > * {
+  border: 3px solid green;
+}

@@ -1,0 +1,21 @@
+body {
+     background-color: #ccc;
+     background-image: url('img/patron4.jpg');
+     background-repeat: no-repeat;
+     background-size: 100%;
+     background-attachment: fixed;
+}
+
+#caja {
+     border: 5px solid black;
+     padding: 10px;
+     background-color: rgb(94, 131, 212);
+     color:white;
+}
+
+h2 {
+     color: red;
+     background-color: white;
+     background-image: url('img/patron1.jpg');
+     border: 5px solid red;
+}

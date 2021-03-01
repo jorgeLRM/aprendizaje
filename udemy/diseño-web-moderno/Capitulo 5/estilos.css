@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Arial';
+}
+
+.card{
+    background: steelblue;
+    width: 350px;
+    height: 450px;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+
+.img{
+    display:block ;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    color: white;
+    object-fit: cover;
+    border-radius: 50%;
+    /* border-radius: 50%; */
+    /* border-top-left-radius: 100px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 250px; */
+    /* box-shadow:0 0 6px 3px  rgba(0, 0, 0, 0.5) ; */
+}
+
+
+.titulo{
+    padding-bottom: inherit;
+}
+
+
+.parrafo{
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+/* input{
+    display: inline-block;
+    margin: 0 0 0 40px;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid transparent;
+} */
+
+
+
+
+
+/* border: 10px dashed tomato ; */
+
+
+/* border-style:ridge ;
+border-width: 20px ;
+border-color: brown; */
+
+/* border-left: 10px dotted brown ;
+border-top: 10px dashed tomato ;
+border-right: 10px dotted brown;
+border-bottom: 10px dashed teal; */
+
+
+/* border-top-color: ;
+border-top-style: ;
+border-top-width: ;
+border-left-color: ;
+border-left-style: ;
+border-left-width: ;
+border-right-color: ;
+border-right-style: ;
+border-right-width: ;
+border-bottom-color: ;
+border-bottom-style: ;
+border-bottom-width: ; */

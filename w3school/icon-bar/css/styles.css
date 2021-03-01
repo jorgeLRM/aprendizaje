@@ -1,0 +1,50 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.icon-bar{
+    background-color: #555; /* Colo de fondo gris oscuro */
+}
+
+.icon-bar a{
+    text-align: center; /* Alinear el texto al centro */
+    transition: all 0.3s ease; /* Agregar transition para efectos hover */
+    color: white; /* Color de texto en blanco */
+    font-size: 36px; /* Incrementar letra */
+}
+
+.vertical{
+    width: 90px; /* Especificar el ancho */
+}
+
+.horizontal{
+    width: 100%; /* Ancho lleno */
+    overflow: auto; /* Overflow  */
+}
+
+.horizontal a{
+    float: left; /* Flotar links lado por lado */
+    width: 20%; /* Ancho igual (5 iconos con 20% de ancho cada uno = 100%) */
+    padding: 12px 0;
+}
+
+.vertical a{
+    display: block; /* Hace que los links aparezcan debajo del otro o uno al lado del otro */
+    padding: 16px; /* Agregar algo de padding */
+}
+
+.icon-bar a:hover{
+    background-color: #000; /* Agregar un color sobre */
+}
+
+.active{
+    background-color: #4CAF50; /* Agregar un color a activo/actual */
+}
